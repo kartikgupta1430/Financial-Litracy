@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Literacy</title>
+    <link rel="stylesheet" href="styles/agent.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <nav>
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <label class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </label>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="tool.html">Tools</a></li>
+              <li><a href="calculator.html">Calculator</a></li>
+              <li><a href="agent.html">Agent</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+<!--Agent section-->
+
+        <div class="container">
+          <header>
+            <h1>💬 Finance AI Agent</h1>
+            <p class="subtitle">Chat with our Finance advanced AI model</p>
+          </header>
+    
+          <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+              <div class="message">
+                <div class="avatar">AI</div>
+                
+                <div class="message-content"
+                rows="1"
+                  required>
+                  Hello! I'm Finance AI Agent. How can I help you today?
+                </div>
+              </div>
+            </div>
+    
+            <div class="input-container">
+              <form class="input-form" id="chatForm">
+                <textarea
+                  id="userInput"
+                  placeholder="Type your message here..."
+                  rows="1"
+                  required
+                ></textarea>
+                <button type="submit" id="sendButton">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <script src="agent.js"></script>
+
+<!--Footer section-->
+
+      <footer class="footer-bottom py-3 text-center">
+          <p>Copyright &copy; 2024 by financial literacy. All Rights Reserved.</p>
+      </footer>
+      
+</body>
+</html>

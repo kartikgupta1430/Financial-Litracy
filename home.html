@@ -1,0 +1,386 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Financial Literacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body >
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+
+nav {
+    background-color: #55BA53;
+    height: 80px;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 70px; 
+    display: block;
+    margin-left: 10px;
+}
+
+
+nav ul {
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+    text-transform: uppercase;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #1a8525;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#check{
+    display: none;
+}
+
+/* Responsive Navigation */
+
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 852px){
+    .checkbtn{
+        display: block;
+    }
+    
+    ul{
+        position: absolute;
+        width: 100%;
+        height: 55vh;
+        background: #1a8525;
+        top: 80px;
+        left: -100%; 
+        text-align: center;
+        flex-direction: column;
+        transition: all .5s;
+    }
+    
+    nav ul li{
+        display: block;
+        margin: 30px 0;
+        line-height: 0px;
+    }
+    
+    nav ul li a{
+        font-size: 20px;
+        color: white;
+        font-weight: bold; 
+    }
+    
+    a:hover, a.active{
+        color: black;
+    }
+    
+    #check:checked ~ ul{
+        left: 0; 
+        display: flex;
+    }
+}
+
+</style>
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </label>
+    
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="tool.html">Tools</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="agent.html">Agent</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+<!-- Showcase Section -->
+
+    <div class="showcase">
+        <style>
+            .showcase {
+                background: url('images/background home.jpg') no-repeat center center/cover;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        </style>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-[50px]  font-bold text-black rounded -mt-20 mb-12">
+                Master Your Money, <span class="text-green-600"> Shape Your Future</span>
+            
+            <p class="text-[20px] text-black font-bold mt-20 mb-12">
+                Empower yourself with financial knowledge and tools to make informed decisions<br>
+                about your money and secure your financial future.
+            </p>
+            </h1>
+            
+            
+        
+            <div class="flex justify-center space-x-4">
+                <a class="btn btn-left font-bold  bg-blue-600 text-white px-4 py-2 rounded-full" href="about.html">EXPLORE MORE</a>
+                <a class="btn btn-right font-bold bg-blue-600 text-white px-4 py-2 rounded-full" href="contact.html">GET IN TOUCH</a>
+                
+            </div>
+        </div>
+    </div>
+    
+<!-- Features Section -->
+
+<style>
+    .Knowledge {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top:100px ;
+    }
+    h5{
+        color: gray;
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    h1{
+            color: #55BA53;
+        font-size: 36px;
+        font-weight: 600;
+    }
+    p{
+        color:#95A2BB;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 10px;
+    }
+    .row{
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+    
+    } 
+    .course{
+        flex-basis: 31%;
+        background: #0A2940;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        padding: 20px 12px;
+        box-sizing: border-box;
+    }
+    h3{
+        color: #55BA53;
+        text-align: center;
+        font-weight: 600;
+        max-width: 10px 0;
+    }
+    .course:hover{
+        box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    
+    }
+    #services {
+        margin: 50px auto; 
+        padding: 30px;
+        text-align: center;
+        width: 90%;
+        max-width: 1200px; 
+        box-sizing: border-box;
+    }
+    
+    #services .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 40px;
+        gap: 20px;
+    }
+    
+    #services .items .item {
+        text-align: center;
+        padding: 20px;
+        margin: 10px;
+        background: #0A2940;
+        border-radius: 5px;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.3), -5px -5px 20px rgba(0, 0, 0, 0.3);
+        transition: all 0.5s ease;
+        flex: 1 1 300px; 
+        max-width: 350px; 
+    }
+    
+    #services .items .item h3 {
+        color: #55BA53;
+        font-size: 16px;
+        margin: 5px;
+    }
+    
+    #services .items .item p {
+        line-height: 1.4;
+        color: #95A2BB;
+    }
+    
+    #services .items .item i {
+        color: #95A2BB;
+        font-size: 24px; 
+    }
+    
+    #services .items .item:hover {
+        background: #0A2940;
+        transform: scale(1.05);
+    }
+    
+    #services .items .item:hover i {
+        color: #55BA53;
+    }
+    
+    #services .items .item:hover h3 {
+        color: #f4f4f4;
+    }
+
+/* Responsive Design */
+
+    @media (max-width: 768px) {
+        #services {
+            width: 95%; 
+        }
+    
+        #services .items {
+            flex-direction: column; 
+            align-items: center; 
+        }
+    
+        #services .items .item {
+            width: 90%;
+            max-width: 400px; 
+        }
+    }
+</style>
+
+    <section class="Knowledge">
+        <h1>Details</h1>
+        <h5>fintech is essential website to have the knowledge of finance </h5>
+        
+        <Div class="row">
+        <div class="course">
+                <h3>Introduction</h3>
+                <p>Financial literacy is the ability to understand and manage personal finances effectively. It includes budgeting, saving, investing, and debt management. In today’s fast-paced world, having strong financial knowledge is crucial for making informed decisions and securing a stable financial future.</p>
+        </div>
+        <div class="course">
+                    <h3>Why Financial Literacy Matters?</h3>
+                    <p>Financial literacy helps in budgeting by ensuring that you spend wisely and save effectively. It prevents overspending and allows better financial planning. It also encourages savings and investments, helping you grow your wealth over time. Managing debt is another important aspect. Many people struggle with loans and credit card debt. Learning about financial literacy helps in avoiding debt traps and making responsible financial choices.</p>
+        </div>
+        
+        <div class="course">
+                        <h3> Features of Our Financial Literacy Platform</h3>
+                        <p>Our financial literacy platform offers many features to help you manage money better. We provide budgeting tools to help you track expenses and plan your finances. A savings goal tracker helps you set and achieve your financial goals. We also offer investment education to help you understand stocks, mutual funds, and other investment options. Our credit score monitoring feature provides insights on improving credit health. Additionally, we offer a tax planning guide to help you understand taxes and tax-saving strategies.</p>
+        </div>
+    
+        </Div>
+    </section>
+
+<!-- Services Section -->
+
+    <section id="services" class="bg-light py-3">
+        <div class="wrapper">
+            <div class="items">
+                <div class="item">
+                    <a href="https://financialservices.gov.in/beta/en"><i class="bx bxs-badge-dollar bx-lg"></i></a>
+                    <h3>Financial Services</h3>
+                    <p>Financial services refer to economic services provided by the finance industry, including banking, investments, insurance, and financial planning.</p>
+                </div>
+                <div class="item">
+                    <a href="https://services.india.gov.in/"><i class="bx bxs-building-house bx-lg"></i></a>
+                    <h3>Government Services</h3>
+                    <p>Government services are public services provided by the government to citizens, including healthcare, education, transportation, law enforcement, and infrastructure.</p>
+                </div>
+                <div class="item">
+                    <a href="https://financialservices.gov.in/beta/en/banking-overview"><i class="bx bxs-bank bx-lg"></i></a>
+                    <h3>Banking Services</h3>
+                    <p>Banking services include financial activities provided by banks, such as deposits, loans, money transfers, credit cards, and investment management.</p>
+                </div>
+    
+        </div>
+    </section>
+    
+<!-- Feedback Section -->
+
+    <section class="contact bg-green-600 py-12" id="contact">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Connect with us</h2>
+            <p class="text-white mb-8">
+                Let's connect and explore how we can support your financial journey. 
+                <br> Reach out to us today and take control of your future!
+            </p>
+            <form class="text-center ">
+                <input class="px-4 py-2 rounded-l-lg" id="email" name="email" placeholder="Enter Email Address" type="email"/>
+                <button class="bg-white text-blue-600 px-4 py-2 rounded-r-lg">Submit</button>
+            </form>
+        </div>
+    </section>
+
+<!-- Footer Section -->
+
+    <footer class="footer-bottom py-4 bg-gray-800 text-center">
+        <p class="text-white">Copyright &copy; 2024 by financial literacy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
