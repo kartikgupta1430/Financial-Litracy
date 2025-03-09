@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <header>
         <nav>
             <input type="checkbox" id="check">
             <label for="check" class="checkbtn">
@@ -26,108 +27,111 @@
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
-
-        
-<!-- Calculator Section -->
-
-            <h1>Financial Calculator</h1>
-            <div class="calculator">
-                <div class="display">
-                    <input type="text" id="result" disabled>
-                </div>
-                <div class="buttons">
-                    <button class="btn" onclick="clearDisplay()">C</button>
-                    <button class="btn" onclick="backspace()">⌫</button>
-                    <button class="btn operator" onclick="appendValue('/')">÷</button>
-                    <button class="btn operator" onclick="appendValue('*')">×</button>
-                    
-                    <button class="btn" onclick="appendValue('7')">7</button>
-                    <button class="btn" onclick="appendValue('8')">8</button>
-                    <button class="btn" onclick="appendValue('9')">9</button>
-                    <button class="btn operator" onclick="appendValue('-')">−</button>
-                    
-                    <button class="btn" onclick="appendValue('4')">4</button>
-                    <button class="btn" onclick="appendValue('5')">5</button>
-                    <button class="btn" onclick="appendValue('6')">6</button>
-                    <button class="btn operator" onclick="appendValue('+')">+</button>
-                    
-                    <button class="btn" onclick="appendValue('1')">1</button>
-                    <button class="btn" onclick="appendValue('2')">2</button>
-                    <button class="btn" onclick="appendValue('3')">3</button>
-                    <button class="btn" onclick="calculateSquare()">x²</button>
-                    <button class="btn equal" onclick="calculate()">=</button>
-                    
-                    <button class="btn" onclick="appendValue('0')">0</button>
-                    <button class="btn" onclick="appendValue('.')">.</button>
-                    <button class="btn" onclick="calculateLoan()">EMI</button>
-                    <button class="btn" onclick="calculateInterest()">Interest</button>
-                    <button class="btn" onclick="calculateFD()">FD</button>
-                    <button class="btn" onclick="calculateBAIIPlus()">BA II Plus</button>
-                </div>
+    </header>
+    
+    <main>
+        <h1>Financial Calculator</h1>
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="result" disabled>
             </div>
-            
-            <script>
-                function appendValue(value) {
-                    document.getElementById("result").value += value;
-                }
-        
-                function clearDisplay() {
-                    document.getElementById("result").value = "";
-                }
-        
-                function backspace() {
-                    let display = document.getElementById("result");
-                    display.value = display.value.slice(0, -1);
-                }
-        
-                function calculate() {
-                    try {
-                        document.getElementById("result").value = eval(document.getElementById("result").value);
-                    } catch {
-                        document.getElementById("result").value = "Error";
-                    }
-                }
-        
-                function calculateSquare() {
-                    let value = parseFloat(document.getElementById("result").value);
-                    document.getElementById("result").value = (value * value).toFixed(2);
-                }
-        
-                function calculateLoan() {
-                    let principal = parseFloat(prompt("Enter loan amount:"));
-                    let rate = parseFloat(prompt("Enter annual interest rate (%):")) / 100 / 12;
-                    let months = parseInt(prompt("Enter loan term in months:"));
-                    let payment = (principal * rate) / (1 - Math.pow(1 + rate, -months));
-                    document.getElementById("result").value = payment.toFixed(2);
-                }
-        
-                function calculateInterest() {
-                    let principal = parseFloat(prompt("Enter principal amount:"));
-                    let rate = parseFloat(prompt("Enter annual interest rate (%):")) / 100;
-                    let time = parseFloat(prompt("Enter time in years:"));
-                    let interest = principal * rate * time;
-                    document.getElementById("result").value = interest.toFixed(2);
-                }
-        
-                function calculateFD() {
-                    let principal = parseFloat(prompt("Enter fixed deposit amount:"));
-                    let rate = parseFloat(prompt("Enter annual interest rate (%):")) / 100;
-                    let time = parseFloat(prompt("Enter time in years:"));
-                    let maturityAmount = principal * Math.pow(1 + rate, time);
-                    document.getElementById("result").value = maturityAmount.toFixed(2);
-                }
-        
-                function calculateBAIIPlus() {
-                    alert("BA II Plus functionality coming soon!");
-                }
-            </script>
+            <div class="buttons">
+                <button class="btn" onclick="clearDisplay()">C</button>
+                <button class="btn" onclick="backspace()">⌫</button>
+                <button class="btn operator" onclick="appendValue('/')">÷</button>
+                <button class="btn operator" onclick="appendValue('*')">×</button>
+                
+                <button class="btn" onclick="appendValue('7')">7</button>
+                <button class="btn" onclick="appendValue('8')">8</button>
+                <button class="btn" onclick="appendValue('9')">9</button>
+                <button class="btn operator" onclick="appendValue('-')">−</button>
+                
+                <button class="btn" onclick="appendValue('4')">4</button>
+                <button class="btn" onclick="appendValue('5')">5</button>
+                <button class="btn" onclick="appendValue('6')">6</button>
+                <button class="btn operator" onclick="appendValue('+')">+</button>
+                
+                <button class="btn" onclick="appendValue('1')">1</button>
+                <button class="btn" onclick="appendValue('2')">2</button>
+                <button class="btn" onclick="appendValue('3')">3</button>
+                <button class="btn" onclick="calculateSquare()">x²</button>
+                <button class="btn equal" onclick="calculate()">=</button>
+                
+                <button class="btn" onclick="appendValue('0')">0</button>
+                <button class="btn" onclick="appendValue('.')">.</button>
+                <button class="btn" onclick="calculateLoan()">EMI</button>
+                <button class="btn" onclick="calculateInterest()">Interest</button>
+                <button class="btn" onclick="calculateFD()">FD</button>
+                <button class="btn" onclick="calculateBAIIPlus()">BA II Plus</button>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        function appendValue(value) {
+            document.getElementById("result").value += value;
+        }
 
-<!-- Footer Section -->
+        function clearDisplay() {
+            document.getElementById("result").value = "";
+        }
+
+        function backspace() {
+            let display = document.getElementById("result");
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            try {
+                let expression = document.getElementById("result").value;
+                document.getElementById("result").value = eval(expression) || "";
+            } catch {
+                document.getElementById("result").value = "Error";
+            }
+        }
+
+        function calculateSquare() {
+            let value = parseFloat(document.getElementById("result").value) || 0;
+            document.getElementById("result").value = (value * value).toFixed(2);
+        }
+
+        function calculateLoan() {
+            let principal = parseFloat(prompt("Enter loan amount:") || 0);
+            let rate = parseFloat(prompt("Enter annual interest rate (%):") || 0) / 100 / 12;
+            let months = parseInt(prompt("Enter loan term in months:") || 0);
+            if (principal > 0 && rate > 0 && months > 0) {
+                let payment = (principal * rate) / (1 - Math.pow(1 + rate, -months));
+                document.getElementById("result").value = payment.toFixed(2);
+            }
+        }
+
+        function calculateInterest() {
+            let principal = parseFloat(prompt("Enter principal amount:") || 0);
+            let rate = parseFloat(prompt("Enter annual interest rate (%):") || 0) / 100;
+            let time = parseFloat(prompt("Enter time in years:") || 0);
+            if (principal > 0 && rate > 0 && time > 0) {
+                let interest = principal * rate * time;
+                document.getElementById("result").value = interest.toFixed(2);
+            }
+        }
+
+        function calculateFD() {
+            let principal = parseFloat(prompt("Enter fixed deposit amount:") || 0);
+            let rate = parseFloat(prompt("Enter annual interest rate (%):") || 0) / 100;
+            let time = parseFloat(prompt("Enter time in years:") || 0);
+            if (principal > 0 && rate > 0 && time > 0) {
+                let maturityAmount = principal * Math.pow(1 + rate, time);
+                document.getElementById("result").value = maturityAmount.toFixed(2);
+            }
+        }
+
+        function calculateBAIIPlus() {
+            alert("BA II Plus functionality coming soon!");
+        }
+    </script>
 
     <footer class="footer-bottom py-3 text-center">
-        <p>Copyright &copy; 2024 by financial literacy. All Rights Reserved.</p>
+        <p>&copy; 2024 Financial Literacy. All Rights Reserved.</p>
     </footer>
-        
 </body>
 </html>
-        
