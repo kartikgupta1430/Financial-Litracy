@@ -195,49 +195,101 @@ nav ul li a:hover {
         width: 80%;
         margin: auto;
         text-align: center;
-        padding-top:100px ;
+        padding-top: 100px;
     }
-    h5{
+    
+    h5 {
         color: gray;
         margin-top: 20px;
         font-size: 20px;
         font-weight: 600;
     }
-    h1{
-            color: #55BA53;
+    
+    h1 {
+        color: #55BA53;
         font-size: 36px;
         font-weight: 600;
     }
-    p{
-        color:#95A2BB;
+    
+    p {
+        color: #95A2BB;
         font-size: 16px;
         line-height: 22px;
         padding: 10px;
     }
-    .row{
+    
+    /* Row Section */
+    .row {
         margin-top: 5%;
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
     
-    } 
-    .course{
-        flex-basis: 31%;
+    /* Course Cards */
+    .course {
+        flex-basis: calc(33.333% - 20px);
         background: #0A2940;
         border-radius: 10px;
-        margin-bottom: 5%;
-        padding: 20px 12px;
+        padding: 20px;
         box-sizing: border-box;
+        transition: all 0.3s ease-in-out;
     }
-    h3{
+    
+    h3 {
         color: #55BA53;
         text-align: center;
         font-weight: 600;
-        max-width: 10px 0;
     }
-    .course:hover{
-        box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
     
+    .course:hover {
+        box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
     }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .Knowledge {
+            width: 90%;
+            padding-top: 80px;
+        }
+    
+        .course {
+            flex-basis: calc(50% - 20px);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .Knowledge {
+            width: 95%;
+            padding-top: 60px;
+        }
+    
+        .row {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .course {
+            flex-basis: 80%;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 28px;
+        }
+    
+        h5 {
+            font-size: 18px;
+        }
+    
+        .course {
+            flex-basis: 100%;
+            padding: 15px;
+        }
+    }
+    
     #services {
         margin: 50px auto; 
         padding: 30px;
