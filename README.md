@@ -47,7 +47,8 @@ Ensure the application is responsive and user-friendly.
 │   ├── home.html
 ├── index.html
 
-📂 Root Directo
+📂 Root Directory
+
 index.html → The main homepage of the project.
 home.html → The homepage for financial tools.
 calculator.html → The financial calculator page.
@@ -57,11 +58,13 @@ contact.html → Contact information page.
 about.html → About the project page.
 
 📂 css/ (Stylesheets for the project)
+
 animations.css → Contains animation effects.
 boxicons.css, boxicons.min.css → External icon library styles.
 transformations.css → Additional transformation effects.
 
 📂 styles/ (Custom styles for different pages)
+
 about.css → Styles for the About page.
 agent.css → Styles for the chatbot page.
 calculator.css → Styles for the financial calculator.
@@ -69,23 +72,28 @@ contact.css → Styles for the Contact page.
 tool.css → Styles for the Tools page.
 
 📂 images/ (All images used in the project)
+
 logo.png → Website logo.
 background home.jpg → Background image for the home page.
 team.jpg, anand.jpg, kartik.jpg, ujawal.jpg, etc. → Team member images.
 
 📂 Javascript/ (JS functionalities)
+
 agent.js → JavaScript logic for the AI chatbot.
 
 📂 boxicons-2.0.9/ (Icon library for UI elements)
+
 Used to display financial and navigation icons.
 
 📂 svg/ (Scalable Vector Graphics, if any used)
 
 📜 LICENSE.txt
+
 Licensing details for the project.
 
 
 3. Features
+   
 ✅ Financial Calculator → Perform standard arithmetic and financial calculations.
 ✅ Loan Calculator → Calculate EMI (Equated Monthly Installment).
 ✅ Interest Calculator → Compute simple interest on a given principal.
@@ -94,19 +102,22 @@ Licensing details for the project.
 ✅ Responsive UI → Works on all screen sizes (mobile, tablet, desktop).
 ✅ AI Chatbot (Agent) → A smart financial assistant to answer queries.
 
-4. Tech Stack
+5. Tech Stack
+   
 🖥 Frontend: HTML, CSS, JavaScript
 🎨 Styling: CSS (Custom styles), Boxicons, FontAwesome
 📊 Libraries: External JavaScript libraries for UI/UX enhancements
 
   
-6. File Descriptions
+7. File Descriptions
+
 HTML Files: Structure of the web pages.
 CSS Files: Styles for different pages.
 JavaScript (JS) Files: Logic for financial calculations and chatbot.
 Images: Logos, team photos, and background images.
 
-7. Future Enhancements
+9. Future Enhancements
+    
 📌 Add More Financial Tools: Additional calculators like SIP, Mutual Funds, and Inflation calculators.
 📌 Improve UI/UX: Enhanced animations and modern design improvements.
 📌 Advanced AI Chatbot: A more interactive chatbot with voice capabilities.
