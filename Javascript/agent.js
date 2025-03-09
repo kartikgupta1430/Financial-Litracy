@@ -1,5 +1,3 @@
-// script.js
-// Replace with your actual API key
 const API_KEY = "AIzaSyCrw0By_ciJMnSxbKFNDrbeRrkKwhJ9vI8";
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
@@ -9,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatMessages = document.getElementById("chatMessages");
     const sendButton = document.getElementById("sendButton");
 
-    // Auto-resize the textarea
+    
     userInput.addEventListener("input", () => {
         userInput.style.height = "auto";
         userInput.style.height = userInput.scrollHeight + "px";
@@ -20,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = userInput.value.trim();
         if (!message) return;
 
-        addMessage(message, true); // Add user message to chat
+        addMessage(message, true); 
         userInput.value = "";
         userInput.style.height = "auto";
         sendButton.disabled = true;
@@ -39,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Generate response
     async function generateResponse(prompt) {
         try {
             const response = await fetch(API_URL, {
@@ -61,10 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             if (!response.ok) {
-                const errorData = await response.json(); // Try to get more detailed error info
+                const errorData = await response.json();
                 let errorMessage = `Failed to generate response. Status: ${response.status}`;
                 if (errorData && errorData.error && errorData.error.message) {
-                    errorMessage += ` - ${errorData.error.message}`; // Include API error message if available
+                    errorMessage += ` - ${errorData.error.message}`; 
                 }
                 throw new Error(errorMessage);
             }
@@ -77,54 +74,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
             return data.candidates[0].content.parts[0].text;
         } catch (error) {
-            console.error("Error generating response:", error); // Log the error for debugging
-            throw error; // Re-throw the error to be caught by the calling function
+            console.error("Error generating response:", error); 
+            throw error; 
         }
     }
 
-
-    // Add user message to chat
     function addMessage(text, isUser) {
         const message = document.createElement("div");
         message.className = `message ${isUser ? "user-message" : ""}`;
         message.innerHTML = `
-      <div class="avatar ${isUser ? "user-avatar" : ""}">
-      ${isUser ? "U" : "AI"}
-      </div>
-      <div class='message-content'>${text}</div>
-      `;
+    <div class="avatar ${isUser ? "user-avatar" : ""}">
+    ${isUser ? "U" : "AI"}
+    </div>
+    <div class='message-content'>${text}</div>
+    `;
         chatMessages.appendChild(message);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Show indicator
     function showTypingIndicator() {
         const indicator = document.createElement("div");
         indicator.className = "message";
         indicator.innerHTML = `
-      <div class="avatar">AI</div>
-      <div class="typing-indicator">
-      <div class='dot'></div>
-      <div class='dot'></div>
-      <div class='dot'></div>
-      </div>
-      `;
+    <div class="avatar">AI</div>
+    <div class="typing-indicator">
+    <div class='dot'></div>
+    <div class='dot'></div>
+    <div class='dot'></div>
+    </div>
+    `;
         chatMessages.appendChild(indicator);
         chatMessages.scrollTop = chatMessages.scrollHeight;
         return indicator;
     }
 
-    // Error message function
     function addErrorMessage(text) {
         const message = document.createElement("div");
         message.className = "message";
         message.innerHTML = `
-          <div class="avatar">AI</div>
-      <div class="message-content" style="color:red">
+        <div class="avatar">AI</div>
+    <div class="message-content" style="color:red">
         Error: ${text}
-      </div>
+    </div>
         `;
-        chatMessages.appendChild(message); // Corrected: Append the error message to the chat
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Corrected: Scroll to the bottom
+        chatMessages.appendChild(message);
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
     }
 });
