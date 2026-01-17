@@ -1,5 +1,7 @@
-const API_KEY = "AIzaSyCrw0By_ciJMnSxbKFNDrbeRrkKwhJ9vI8";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+
+const API_KEY = "AIzaSyA0EEZUINxwt_vBvONFG8jGRKo0MBOGlAA";
+
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
 
 document.addEventListener("DOMContentLoaded", () => {
     const chatForm = document.getElementById("chatForm");
@@ -7,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatMessages = document.getElementById("chatMessages");
     const sendButton = document.getElementById("sendButton");
 
-    
+    // Auto-resize textarea
     userInput.addEventListener("input", () => {
         userInput.style.height = "auto";
         userInput.style.height = userInput.scrollHeight + "px";
@@ -30,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             typingIndicator.remove();
             addMessage(response, false);
         } catch (error) {
-            typingIndicator.remove();
+            if (typingIndicator) typingIndicator.remove();
             addErrorMessage(error.message);
         } finally {
             sendButton.disabled = false;
@@ -38,71 +40,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     async function generateResponse(prompt) {
-        try {
-            const response = await fetch(API_URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    contents: [
-                        {
-                            parts: [
-                                {
-                                    text: prompt,
-                                },
-                            ],
-                        },
-                    ],
-                }),
-            });
+        // We use a POST request, but the Key stays in the URL above
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{ text: prompt }]
+                }]
+            }),
+        });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                let errorMessage = `Failed to generate response. Status: ${response.status}`;
-                if (errorData && errorData.error && errorData.error.message) {
-                    errorMessage += ` - ${errorData.error.message}`; 
-                }
-                throw new Error(errorMessage);
-            }
+        const data = await response.json();
 
-            const data = await response.json();
-
-            if (!data.candidates || data.candidates.length === 0 || !data.candidates[0].content || !data.candidates[0].content.parts || data.candidates[0].content.parts.length === 0) {
-                throw new Error("Invalid response format from the API.");
-            }
-
-            return data.candidates[0].content.parts[0].text;
-        } catch (error) {
-            console.error("Error generating response:", error); 
-            throw error; 
+        if (!response.ok) {
+            // This will now catch 403, 400, or 500 errors specifically
+            throw new Error(data.error?.message || `Status: ${response.status}`);
         }
+
+        return data.candidates[0].content.parts[0].text;
     }
 
     function addMessage(text, isUser) {
         const message = document.createElement("div");
-        message.className = `message ${isUser ? "user-message" : ""}`;
+        message.className = `message ${isUser ? "user-message" : "ai-message"}`;
+        
+        // Simple Markdown-style bolding for better readability
+        const formattedText = isUser ? text : text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+
         message.innerHTML = `
-    <div class="avatar ${isUser ? "user-avatar" : ""}">
-    ${isUser ? "U" : "AI"}
-    </div>
-    <div class='message-content'>${text}</div>
-    `;
+            <div class="avatar">${isUser ? "U" : "AI"}</div>
+            <div class='message-content'>${formattedText}</div>
+        `;
         chatMessages.appendChild(message);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
     function showTypingIndicator() {
         const indicator = document.createElement("div");
-        indicator.className = "message";
+        indicator.className = "message ai-message";
         indicator.innerHTML = `
-    <div class="avatar">AI</div>
-    <div class="typing-indicator">
-    <div class='dot'></div>
-    <div class='dot'></div>
-    <div class='dot'></div>
-    </div>
-    `;
+            <div class="avatar">AI</div>
+            <div class="typing-indicator"><span>.</span><span>.</span><span>.</span></div>
+        `;
         chatMessages.appendChild(indicator);
         chatMessages.scrollTop = chatMessages.scrollHeight;
         return indicator;
@@ -112,10 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = document.createElement("div");
         message.className = "message";
         message.innerHTML = `
-        <div class="avatar">AI</div>
-    <div class="message-content" style="color:red">
-        Error: ${text}
-    </div>
+            <div class="avatar" style="background: #ff4d4d">!</div>
+            <div class="message-content" style="color: #ff4d4d; font-weight: bold;">
+                System Error: ${text}
+            </div>
         `;
         chatMessages.appendChild(message);
         chatMessages.scrollTop = chatMessages.scrollHeight; 
