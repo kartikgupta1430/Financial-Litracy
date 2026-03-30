@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body >
 <style>
@@ -414,25 +415,80 @@ nav ul li a:hover {
     </section>
     
 <!-- Feedback Section -->
+<style>.feedback{
+    text-align: center;
+    padding: 50px;
+    background-color: #161b22;
+    border-top: 1px solid #30363d;
+}
+.feedback h2{
+    font-size: 35px;
+    color: #58a6ff;
+}
+.feedback p{
+    color: #c9d1d9;
+}
+.feedback input{
+    padding: 10px;
+    background: #0d1117;
+    color: white;
+    border: 1px solid #30363d;
+    border-radius: 10px 0 0 10px;
+}
+.feedback button{
+    background: #238636;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0px;
+    padding: 10px 20px;
+}
+.feedback button:hover{
+    background: #2ea043;
+}</style>
+    <div class="feedback">
+        <h2>We Value Your Feedback</h2>
+        <p>Your feedback helps us improve our services.</p>
+    
+        <input type="text" id="feedbackText" placeholder="Enter your feedback here...">
+    
+        <button class="btn" onclick="sendFeedback()">Submit</button>
+    
+    </div>
+    <script>
+        (function () {
+    emailjs.init("HO-ezRjZBt_n6QQpJ");
+})();
 
-    <section class="contact bg-green-600 py-12" id="contact">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Connect with us</h2>
-            <p class="text-white mb-8">
-                Let's connect and explore how we can support your financial journey. 
-                <br> Reach out to us today and take control of your future!
-            </p>
-            <form class="text-center ">
-                <input class="px-4 py-2 rounded-l-lg" id="email" name="email" placeholder="Enter Email Address" type="email"/>
-                <button class="bg-white text-blue-600 px-4 py-2 rounded-r-lg">Submit</button>
-            </form>
-        </div>
-    </section>
+function sendFeedback() {
+
+    var feedback = document.getElementById("feedbackText").value;
+
+    if (feedback.trim() === "") {
+        alert("Please enter feedback");
+        return;
+    }
+
+    emailjs.send("service_kn35wjr", "template_gee1ysb", {
+        message: feedback
+    })
+    .then(function () {
+        alert("Feedback sent successfully!");
+        document.getElementById("feedbackText").value = "";
+    })
+    .catch(function (error) {
+        console.log(error);
+        alert("Failed to send feedback");
+    });
+
+}
+    </script>
 
 <!-- Footer Section -->
 
     <footer class="footer-bottom py-4 bg-gray-800 text-center">
-        <p class="text-white">Copyright &copy; 2024 by financial literacy. All Rights Reserved.</p>
+        <p class="text-white">Copyright &copy; 2026 by financial literacy. All Rights Reserved.</p>
     </footer>
+
+    <script src="Javascript/index.js"></script>
 </body>
 </html>

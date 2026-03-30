@@ -1,7 +1,6 @@
+const API_KEY = "AIzaSyDa7npFOlXZ6JZTAhYDiI1z8T4qsztdR7c";
 
-const API_KEY = "AIzaSyA0EEZUINxwt_vBvONFG8jGRKo0MBOGlAA";
-
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`;
 
 document.addEventListener("DOMContentLoaded", () => {
     const chatForm = document.getElementById("chatForm");
@@ -9,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatMessages = document.getElementById("chatMessages");
     const sendButton = document.getElementById("sendButton");
 
-    // Auto-resize textarea
     userInput.addEventListener("input", () => {
         userInput.style.height = "auto";
         userInput.style.height = userInput.scrollHeight + "px";
@@ -40,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     async function generateResponse(prompt) {
-        // We use a POST request, but the Key stays in the URL above
         const response = await fetch(API_URL, {
             method: "POST",
             headers: {
@@ -56,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await response.json();
 
         if (!response.ok) {
-            // This will now catch 403, 400, or 500 errors specifically
             throw new Error(data.error?.message || `Status: ${response.status}`);
         }
 
@@ -67,8 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = document.createElement("div");
         message.className = `message ${isUser ? "user-message" : "ai-message"}`;
         
-        // Simple Markdown-style bolding for better readability
-        const formattedText = isUser ? text : text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
+        const formattedText = isUser 
+            ? text 
+            : text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
 
         message.innerHTML = `
             <div class="avatar">${isUser ? "U" : "AI"}</div>
