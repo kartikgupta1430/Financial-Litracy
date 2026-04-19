@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Literacy</title>
+    <title>UCoE Navigation</title>
     <link rel="stylesheet" href="styles/calculator.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <label class="logo">
-                <img src="images/logo.png" alt="Logo">
-            </label>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="tool.html">Tools</a></li>
-                <li><a href="calculator.html">Calculator</a></li>
-                <li><a href="agent.html">Agent</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Financial Literacy</h1>
+        </div>
     
+        <input type="checkbox" id="toggle">
+    
+        <label for="toggle" class="menu">&#9776;</label>
+    
+        <ul class="link">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html">tools</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="agent.html">agent</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+
     <main>
-        <h1>Financial Calculator</h1>
+        <h2>Financial Calculator</h2>
         <div class="calculator">
             <div class="display">
                 <input type="text" id="result" disabled>
             </div>
             <div class="buttons">
-                <button class="btn" onclick="clearDisplay()">C</button>
+                <button class="btn cancel" onclick="clearDisplay()">C</button>
                 <button class="btn" onclick="backspace()">⌫</button>
                 <button class="btn operator" onclick="appendValue('/')">÷</button>
                 <button class="btn operator" onclick="appendValue('*')">×</button>
@@ -130,8 +129,10 @@
         }
     </script>
 
-    <footer class="footer-bottom py-3 text-center">
-        <p>&copy; 2026 Financial Literacy. All Rights Reserved.</p>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 UCoE. All rights reserved.</p>
     </footer>
+    
 </body>
 </html>

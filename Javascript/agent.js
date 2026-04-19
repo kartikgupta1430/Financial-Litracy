@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyDa7npFOlXZ6JZTAhYDiI1z8T4qsztdR7c";
+const API_KEY = "AIzaSyAxME8JK_wdUqF1mt8n0kSL2YQLpJj6mBQ";
 
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${API_KEY}`;
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
             : text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
 
         message.innerHTML = `
-            <div class="avatar">${isUser ? "U" : "AI"}</div>
+            <div class="avatar">${isUser ? "<i class='fas fa-user'></i>" : "<i class='fas fa-robot'></i>"}</div>
             <div class='message-content'>${formattedText}</div>
         `;
         chatMessages.appendChild(message);

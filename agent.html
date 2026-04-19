@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Literacy</title>
+    <title>UCoE Navigation</title>
     <link rel="stylesheet" href="styles/agent.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="boxicons-2.0.9/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-        <nav>
-          <input type="checkbox" id="check">
-          <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-          </label>
-          <label class="logo">
-            <img src="images/logo.png" alt="Logo">
-        </label>
-            <ul>
-              <li><a href="home.html">Home</a></li>
-              <li><a href="tool.html">Tools</a></li>
-              <li><a href="calculator.html">Calculator</a></li>
-              <li><a href="agent.html">Agent</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
 
-<!--Agent section-->
-
-        <div class="container">
-          <header>
-            <h1>💬 Finance AI Agent</h1>
-            <p class="subtitle">Chat with our Finance advanced AI model</p>
-          </header>
-    
-          <div class="chat-container">
-            <div class="chat-messages" id="chatMessages">
-              <div class="message">
-                <div class="avatar">AI</div>
-                
-                <div class="message-content"
-                rows="1"
-                  required>
-                  Hello! I'm Finance AI Agent. How can I help you today?
-                </div>
-              </div>
-            </div>
-    
-            <div class="input-container">
-              <form class="input-form" id="chatForm">
-                <textarea
-                  id="userInput"
-                  placeholder="Type your message here..."
-                  rows="1"
-                  required
-                ></textarea>
-                <button type="submit" id="sendButton">Send</button>
-              </form>
-            </div>
-          </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Financial Literacy</h1>
         </div>
-        <script src="javascript/agent.js"></script>
+    
+        <input type="checkbox" id="toggle">
+    
+        <label for="toggle" class="menu">&#9776;</label>
+    
+        <ul class="link">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html">tools</a></li>
+            <li><a href="calculator.html">Calculator</a></li>
+            <li><a href="agent.html">agent</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<!--Footer section-->
+<!-- AGENT SECTION -->
 
-      <footer class="footer-bottom py-3 text-center">
-          <p>Copyright &copy; 2026 by financial literacy. All Rights Reserved.</p>
-      </footer>
-      
+<div class="container">
+
+    <header>
+        <h2>💬 Finance AI Agent</h2>
+        <p class="subtitle">Chat with our advanced AI model</p>
+    </header>
+
+    <div class="chat-container">
+
+        <!-- MESSAGES -->
+        <div class="chat-messages" id="chatMessages">
+
+            <div class="message">
+                <div class="avatar"><i class="fas fa-robot"></i></div>
+
+                <div class="message-content">
+                    Hello! I'm Finance AI Agent. How can I help you today?
+                </div>
+            </div>
+
+        </div>
+
+        <!-- INPUT -->
+        <div class="input-container">
+            <form class="input-form" id="chatForm">
+
+                <textarea
+                    id="userInput"
+                    placeholder="Type your message here..."
+                    rows="1"
+                    required
+                ></textarea>
+
+                <button type="submit" id="sendButton">
+                    <i class="bx bx-send"></i>
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 UCoE. All rights reserved.</p>
+    </footer>
+
+<!-- JS FILE -->
+<script src="javascript/agent.js"></script>
+
 </body>
 </html>

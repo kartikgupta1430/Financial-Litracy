@@ -1,138 +1,297 @@
-/* Global Reset */
-* {
+*{
     margin: 0;
     padding: 0;
-    text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+/* base */
+
+html, body{
+    height: 100%;
 }
 
-/* Navigation */
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #0B1120;
+    color: #E5E7EB;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-nav {
-    background-color: #55BA53;
-    height: 80px;
+/* navigation */
+
+.navbar{
+    background: #111827;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 60px;
     width: 100%;
-    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.logo{
+    color: #2ECC71;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+.link{
+    display: flex;
+    list-style: none;
+}
+
+.link li a{
+    text-decoration: none;
+    color: #E5E7EB;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.link li a:hover{
+    color: #0B1120;
+    background: #2ECC71;
+    border-radius: 20px;
+}
+
+/* mobile menu */
+
+.menu{
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  user-select: none;
+  color: #E5E7EB;
+  padding: 15px;
+}
+
+#toggle{
+    display: none;
+}
+
+@media(max-width: 920px){
+    
+    .menu{
+        display: block;
+    }
+
+    .link{
+        position: fixed;
+        top: 60px;
+        right: -50%;
+        width: 50%;
+        background:#1F2937;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.4s ease;
+        border-radius: 0 0 0 15px;
+    }
+
+    .link li {
+        margin: 20px 0;
+    }
+
+    .link li a {
+        font-size: 20px;
+    }
+
+    #toggle:checked + .menu + .link {
+        right: 0;
+    }           
+}
+
+/* about section */
+
+/* section */
+
+.mission{
+    background: #0B1120;
+    padding: 50px 20px;
+}
+
+/* container */
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* header */
+
+.header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header h1{
+    font-size: 45px;
+    color: #2ECC71;
+}
+
+.header p{
+    margin-top: 20px;
+    color: #9CA3AF;
+    font-size: 18px;
+}
+
+/* cards */
+
+.card-grid{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.card{
+    flex: 1;
+    min-width: 280px;
+    background: #1F2937;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.05);
+}
+
+.card-top{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
 }
 
-.logo img {
-    width: 70px; 
-    display: block;
-    margin-left: 10px;
+.card-top i{
+    color: #2ECC71;
+    font-size: 24px;
 }
 
-nav ul {
+.card-top h2{
+    color: #ffffff;
+}
+
+.card p{
+    margin-top: 15px;
+    color: #9CA3AF;
+}
+
+/* story */
+
+.story{
     display: flex;
-    margin-right: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 5px;
+.story-text{
+    flex: 1;
 }
 
-nav ul li a {
-    color: white;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 10px;
-    text-transform: uppercase;
-    display: block;
+.story-text h2{
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
-nav ul li a:hover {
-    background-color: #1a8525;
-    border-radius: 5px;
-    transition: 0.5s;
+.story-text p{
+    color: #9CA3AF;
+    margin-bottom: 10px;
 }
 
-/* Mobile */
-
-.checkbtn{
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    display: none;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+.story-img{
+    flex: 1;
 }
 
-#check{
-    display: none;
+.story-img img{
+    width: 100%;
+    border-radius: 10px;
 }
 
-/* Responsive Navigation */
-@media (max-width: 952px){
-    label.logo{
-        font-size: 30px;
-        padding-left: 50px;
-    }
-    nav ul li a{
-        font-size: 16px;
-    }
+/* stats */
+
+.stats{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-@media (max-width: 852px){
-    .checkbtn{
-        display: block;
-    }
-    
-    ul{
-        position: absolute;
-        width: 100%;
-        height: 55vh;
-        background: #1a8525;
-        top: 80px;
-        left: -100%; 
-        text-align: center;
-        flex-direction: column;
-        transition: all .5s;
-    }
-    
-    nav ul li{
-        display: block;
-        margin: 30px 0;
-        line-height: 0px;
-    }
-    
-    nav ul li a{
-        font-size: 20px;
-        color: white;
-        font-weight: bold;
-    }
-    
-    a:hover, a.active{
-        color: black;
-    }
-    
-    #check:checked ~ ul{
-        left: 0; 
-        display: flex;
-    }
-}
-
-/* Footer Section */
-
-.footer-bottom{
-    background: #1A1B1E;
-    color: #536DAF;
+.stat-box{
+    flex: 1;
+    min-width: 200px;
+    background: #1F2937;
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    padding: 10px;
 }
-.footer-bottom p{
-    font-size: 14px;
-    font-weight: 600;
-    font-size: large;
+
+.stat-box i{
+    color: #2ECC71;
+    font-size: 28px;
+}
+
+.stat-box h3{
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.stat-box p{
+    color: #9CA3AF;
+}
+
+/* responsive */
+
+@media(max-width: 768px){
+    .header h1{
+        font-size: 30px;
+    }
+
+    .story{
+        flex-direction: column;
+    }
+}
+
+/* new feature section */
+
+.features{
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.features h2{
+    color: #2ECC71;
+    margin-bottom: 15px;
+}
+
+.features ul{
+    list-style: none;
+}
+
+.features li{
+    color: #9CA3AF;
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+/* footer */
+
+.footer{
+    background: #111827;
+    color: #9CA3AF;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.footer p{
+    font-size: 16px;
 }
