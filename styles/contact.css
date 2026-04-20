@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/* base */
-
 html, body{
     height: 100%;
 }
@@ -59,7 +57,7 @@ body{
     border-radius: 20px;
 }
 
-/* mobile menu */
+/* mobile */
 
 .menu{
   font-size: 28px;
@@ -114,8 +112,6 @@ body{
     background: #0B1120;
 }
 
-/* titles */
-
 .sub-title{
     color: #9CA3AF;
     font-size: 18px;
@@ -136,19 +132,19 @@ body{
     margin-bottom: 40px;
 }
 
-/* container */
+
 
 .team-container{
     display: flex;
     gap: 25px;
 
-    flex-wrap: nowrap;              /* ✅ UPDATED */
-    overflow-x: auto;               /* ✅ SCROLL ENABLE */
-    scroll-behavior: smooth;        /* ✅ SMOOTH SCROLL */
+    flex-wrap: nowrap;              
+    overflow-x: auto;               
+    scroll-behavior: smooth;       
     padding: 25px;
 }
 
-/* optional scrollbar */
+
 
 .team-container::-webkit-scrollbar {
     height: 6px;
@@ -159,29 +155,28 @@ body{
     border-radius: 10px;
 }
 
-/* card */
+
 
 .team-card{
     background: #1F2937;
     border-radius: 12px;
     width: 350px;
-    min-width: 320px;              /* ✅ IMPORTANT FOR SCROLL */
+    min-width: 320px;             
     height: 400px;
 
-    flex: 0 0 auto;                /* ✅ PREVENT SHRINK */
+    flex: 0 0 auto;               
 
     overflow: hidden;
     transition: 0.3s;
     box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
 
-/* hover effect */
+
 
 .team-card:hover{
     transform: translateY(-12px) scale(1.05);
 }
 
-/* image */
 
 .team-img img{
     width: 100%;
@@ -189,7 +184,7 @@ body{
     object-fit: cover;
 }
 
-/* info */
+
 
 .team-info{
     padding: 15px;
@@ -204,8 +199,6 @@ body{
     color: #9CA3AF;
     margin: 5px 0 10px;
 }
-
-/* social icons */
 
 .social{
     display: flex;
@@ -225,7 +218,6 @@ body{
     color: #22c55e;
 }
 
-/* responsive */
 
 @media(max-width: 768px){
     .main-title{
@@ -233,7 +225,7 @@ body{
     }
 
     .team-card{
-        width: 280px;              /* ✅ smaller for mobile scroll */
+        width: 280px;              
         min-width: 280px;
     }
 }
@@ -245,14 +237,13 @@ body{
     background: #0B1120;
 }
 
-/* container */
+
 
 .contact-container{
     max-width: 1100px;
     margin: auto;
 }
 
-/* header */
 
 .contact-header{
     text-align: center;
@@ -269,7 +260,7 @@ body{
     margin-top: 10px;
 }
 
-/* grid */
+
 
 .contact-grid{
     display: flex;
@@ -277,13 +268,13 @@ body{
     flex-wrap: wrap;
 }
 
-/* left */
+
 
 .contact-info{
     flex: 1;
 }
 
-/* info box */
+
 
 .info-box{
     display: flex;
@@ -313,16 +304,12 @@ body{
     color: #9CA3AF;
 }
 
-/* form */
-
 .contact-form{
     flex: 1;
     background: #1F2937;
     padding: 25px;
     border-radius: 12px;
 }
-
-/* inputs */
 
 .form-row{
     display: flex;
@@ -343,8 +330,6 @@ input:focus, textarea:focus{
     outline: none;
     border: 1px solid #2ECC71;
 }
-
-/* button */
 
 button{
     width: 100%;
@@ -395,8 +380,6 @@ button:hover{
     margin-top: 10px;
     color: #2ECC71;
 }
-
-/* responsive */
 
 @media(max-width: 920px){
     .contact-grid{

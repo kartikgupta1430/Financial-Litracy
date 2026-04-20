@@ -3,8 +3,6 @@
 <head>
     <title>UCoE Navigation</title>
     <link rel="stylesheet" href="styles/contact.css">
-
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -37,7 +35,6 @@
     </p>
 
     <div class="team-container">
-        <!-- cards unchanged -->
         <div class="team-card">
             <div class="team-img"><img src="images/ujawal.jpg"></div>
             <div class="team-info">
@@ -92,8 +89,6 @@
     </div>
 </section>
 
-<!-- Contact -->
-
 <!-- Contact Section -->
 <section class="contact">
 
@@ -106,7 +101,6 @@
 
         <div class="contact-grid">
 
-            <!-- Left Info -->
             <div class="contact-info">
                 <div class="info-box">
                     <i class="fas fa-envelope"></i>
@@ -133,7 +127,6 @@
                 </div>
             </div>
 
-            <!-- FORM -->
             <div class="contact-form">
 
                 <form id="contactForm">
@@ -161,7 +154,6 @@
 
 </section>
 
-<!-- POPUP -->
 <div id="popup" class="popup">
     <div class="popup-box">
         <h2>✅ Thank You!</h2>
@@ -175,33 +167,8 @@
 </footer>
 
 <!-- SCRIPT -->
-<script>
-const form = document.getElementById("contactForm");
-const popup = document.getElementById("popup");
 
-form.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    const formData = new FormData(form);
-
-    fetch("https://formsubmit.co/ajax/iamkartik1425@gmail.com", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => {
-        if(response.ok){
-            popup.style.display = "flex";
-
-            setTimeout(() => {
-                location.reload();
-            }, 2000);
-        } else {
-            alert("Error sending message");
-        }
-    })
-    .catch(() => alert("Network error"));
-});
-</script>
+<script src="Javascript/contact.js"></script>
 
 </body>
 </html>

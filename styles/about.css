@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/* base */
-
 html, body{
     height: 100%;
 }
@@ -59,8 +57,6 @@ body{
     border-radius: 20px;
 }
 
-/* mobile menu */
-
 .menu{
   font-size: 28px;
   cursor: pointer;
@@ -107,21 +103,16 @@ body{
 
 /* about section */
 
-/* section */
-
 .mission{
     background: #0B1120;
     padding: 50px 20px;
 }
 
-/* container */
 
 .container{
     max-width: 1100px;
     margin: auto;
 }
-
-/* header */
 
 .header{
     text-align: center;
@@ -138,9 +129,6 @@ body{
     color: #9CA3AF;
     font-size: 18px;
 }
-
-/* cards */
-
 .card-grid{
     display: flex;
     gap: 20px;
@@ -182,7 +170,7 @@ body{
     color: #9CA3AF;
 }
 
-/* story */
+
 
 .story{
     display: flex;
@@ -214,8 +202,6 @@ body{
     border-radius: 10px;
 }
 
-/* stats */
-
 .stats{
     display: flex;
     gap: 20px;
@@ -245,7 +231,6 @@ body{
     color: #9CA3AF;
 }
 
-/* responsive */
 
 @media(max-width: 768px){
     .header h1{
@@ -257,7 +242,6 @@ body{
     }
 }
 
-/* new feature section */
 
 .features{
     background: #111827;

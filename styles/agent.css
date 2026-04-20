@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-/* base */
+
 
 html, body{
     height: 100%;
@@ -58,8 +58,6 @@ body{
     background: #2ECC71;
     border-radius: 20px;
 }
-
-/* mobile */
 
 .menu{
   font-size: 28px;
@@ -129,8 +127,6 @@ h2 {
   color: #9CA3AF;
 }
 
-/* chat box */
-
 .chat-container {
   flex-grow: 1;
   background: #111827;
@@ -143,8 +139,6 @@ h2 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.7);
 }
 
-/* messages */
-
 .chat-messages {
   flex-grow: 1;
   padding: 1.5rem;
@@ -155,8 +149,6 @@ h2 {
   max-height: 500px;
 }
 
-/* scrollbar */
-
 .chat-messages::-webkit-scrollbar {
   width: 8px;
 }
@@ -165,8 +157,6 @@ h2 {
   background: #2ECC71;
   border-radius: 10px;
 }
-
-/* message */
 
 .message {
   display: flex;
@@ -186,8 +176,6 @@ h2 {
   }
 }
 
-/* avatar */
-
 .avatar {
   width: 40px;
   height: 40px;
@@ -204,8 +192,6 @@ h2 {
   color: #0B1120;
 }
 
-/* message content */
-
 .message-content {
   flex: 1;
   background: #1F2937;
@@ -218,8 +204,6 @@ h2 {
   background: #2ECC71;
   color: #0B1120;
 }
-
-/* input */
 
 .input-container {
   padding: 1rem;
@@ -247,8 +231,6 @@ textarea:focus {
   border-color: #2ECC71;
 }
 
-/* button */
-
 button {
   padding: 0.75rem 1.5rem;
   background: #2ECC71;
@@ -269,8 +251,6 @@ button:hover {
   background: #22c55e;
   transform: scale(1.05);
 }
-
-/* typing */
 
 .typing-indicator {
   display: flex;

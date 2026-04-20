@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/* base */
-
 html, body{
     height: 100%;
 }
@@ -59,8 +57,6 @@ body{
     border-radius: 20px;
 }
 
-/* mobile */
-
 .menu{
   font-size: 28px;
   cursor: pointer;
@@ -99,8 +95,7 @@ body{
     }
 }
 
-/* heading */
-
+/* calculator */
 h2 {
     font-size: 42px;
     text-align: center;
@@ -108,7 +103,6 @@ h2 {
     color: #2ECC71;
 }
 
-/* calculator */
 
 .calculator {
     background: #111827;
@@ -121,7 +115,7 @@ h2 {
     margin: auto;
 }
 
-/* display */
+
 
 .display input {
     width: 100%;
@@ -136,7 +130,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* buttons grid */
+
 
 .buttons {
     display: grid;
@@ -144,7 +138,7 @@ h2 {
     gap: 12px;
 }
 
-/* normal button */
+
 
 .btn, .cancel {
     padding: 16px;
@@ -162,7 +156,7 @@ h2 {
     transform: scale(1.05);
 }
 
-/* operator buttons */
+
 
 .operator {
     background: #2ECC71;
@@ -177,7 +171,7 @@ h2 {
     background: red;
     color: #E5E7EB;
 }
-/* equal button */
+
 
 .equal {
     background: #10B981;
@@ -190,7 +184,7 @@ h2 {
     transform: scale(1.05);
 }
 
-/* wide button */
+
 
 .wide-btn {
     grid-column: span 2;

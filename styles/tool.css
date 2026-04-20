@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/* base */
-
 html, body{
     height: 100%;
 }
@@ -108,33 +106,29 @@ body{
     color: #ffffff;
 }
 
-/* container */
 .container2 {
     display: flex;
     gap: 25px;
     margin: 20px auto;
     padding: 20px;
     max-width: 1200px;
-    align-items: stretch;   /* FIX */
+    align-items: stretch;  
 }
 
-/* scroll fix */
 .scroll{
     flex-wrap: nowrap;
     overflow-x: auto;
-    overflow-y: hidden;     /* important */
+    overflow-y: hidden;     
     scroll-behavior: smooth;
-    min-height: 350px;      /* FIX height */
+    min-height: 350px;     
 }
 
-/* card fix */
+
 .scroll .box2{
     min-width: 260px;
     height: 280px;
     flex: 0 0 auto;
 }
-
-/* hide scrollbar (clean UI) */
 
 .scroll::-webkit-scrollbar{
     height: 6px;
@@ -148,8 +142,6 @@ body{
 .scroll::-webkit-scrollbar-track{
     background: transparent;
 }
-
-/* cards */
 
 .box2 {
     min-width: 260px;
@@ -167,21 +159,18 @@ body{
     flex: 0 0 auto;
 }
 
-/* hover effect */
 
 .box2:hover{
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 20px 45px rgba(0,0,0,0.9);
 }
 
-/* icon */
 
 .box2 i {
     color: #2ECC71;
     font-size: 42px;
 }
 
-/* title */
 
 .box2 h3{
     color: #ffffff;
@@ -190,7 +179,6 @@ body{
     margin-top: 12px;
 }
 
-/* description */
 
 .box2 p{
     color: #9CA3AF;
